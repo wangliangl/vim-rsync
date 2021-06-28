@@ -4,7 +4,7 @@ import time
 from subprocess import check_output
 
 
-IGNORE_FILES = ['.git', '.venv', '__pycache__', 'tags']
+IGNORE_FILES = ['vender', '.env', '.git', 'tags']
 
 
 def without_slash(dirname):
@@ -37,7 +37,7 @@ def find_sync_dir():
         return None
     with open(syncfile) as f:
        remote_dir = f.read().strip()
-        return remote_dir, local_dir
+    return remote_dir, local_dir
 
 
 def find_sync_path(target):
